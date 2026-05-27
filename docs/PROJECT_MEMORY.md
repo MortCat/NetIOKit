@@ -108,7 +108,7 @@
 - 性能目標（吞吐量、延遲、連線數）是否已有具體 KPI？
 
 ## Next Actions
-1. 依 `GO_NO_GO_CHECKLIST.md` 完成試點前全項打勾與缺口修補。
-2. 將 SECS-II item model 擴充到清單/巢狀結構（List + 基本型別族）。
-3. 擴充 HSMS：將 T6/T7 與 unified session/reconnect 策略整合。
-4. 擴充 soak 模式：加入 reconnect churn/失敗注入。
+1. 加入最小 client/server demo 驗證 end-to-end 流程。
+2. 將 `ProtocolReadBuffer<TMessage>` 連接到 session 收包流程。
+3. 補單元測試專案（framing/partial frames/invalid length）。
+4. 設計重連與退避策略介面（含 jitter）。
