@@ -42,6 +42,29 @@
 
 ## Change Log
 ### 2026-05-27
+- 新增 `docs/GO_NO_GO_CHECKLIST.md`（試點上線決策清單）。
+- 針對 unified HSMS codec/session 做可讀性重構與註解補強（不變更外部契約）。
+- 新增 HSMS T6/T7 timers 最小骨架與 timeout 契約測試。
+- 新增 HSMS control/data unified multiplexing skeleton 與精簡整合測試。
+- 新增 HSMS data message 最小通道與 control/data 共存整合測試。
+- 新增 HSMS state machine 接到 session 管線（`NetIOHsmsSession`）與精簡整合測試。
+- 新增 HSMS 最小 state machine（Select/Linktest lifecycle）與精簡測試。
+- 新增 HSMS control message 最小子集（Select/Linktest）骨架與最小整合測試。
+- 新增 HSMS/SECS-II item model 最小子集（ASCII/U4）與編解碼契約測試。
+- 新增 SECS/GEM-style 協定 adapter 最小骨架（`SecsGemStyleCodec`）與契約測試。
+- 新增 `NetIOKit.SmokeTest` 簡易對接測試專案（PING/ACK 一鍵驗證）。
+- 新增高階 API v1 版本化相容策略與契約測試（防止未來破壞性擴充）。
+- 新增高階 API v1（Client/Server Facade）與對應 integration tests。
+- 補強 SessionRunner 邊界一致性 integration tests（斷線、取消、重連競態）。
+- 新增最小 `NetIOKit.Demo` client/server round-trip，並補 `MinimalClientServerDemoTests` integration tests。
+- 新增 `docs/CORE_SCOPE_V1.md`，正式定義 Core 主線與 Optional Tools 邊界。
+- 進入 Step C.6：新增 `NetIOKit.Benchmarks` 第一版 harness，提供吞吐與 P50/P95/P99 輸出。
+- 進入 Step C.5：補強 InMemory metrics（snapshot/reset/messages-per-second）與對應測試。
+- 進入 Step C：新增 SessionRunner metrics 介面與 InMemory 指標實作，補 metrics 測試。
+- 進入 Step B：新增重連策略（Exponential Backoff + jitter）與 SessionRunner 重連控制。
+- 進入 Step A：新增 `TcpTransport`、`SessionRunner`、loopback/integration 測試。
+- 新增 FakeTransport + Integration Tests（fragmentation/sticky/斷線重連模擬）。
+- 新增 `SessionBase` 並行/釋放行為測試（connect/disconnect/dispose）。
 - 建立初版「專案記憶檔」。
 - 記錄使用者提出的核心需求、語言路線與協定方向。
 - 建立架構藍圖文件並在本檔建立交叉引用。
@@ -50,9 +73,30 @@
 - 新增 `ProtocolReadBuffer<TMessage>` 支援分段接收與累積解包。
 - 新增共用錯誤碼與 `NetIOException`。
 - 新增 `docs/PROTOCOLS.md`、`docs/ERROR_CODES.md`、`docs/TEST_MATRIX.md`。
+- 新增 `NetIOKit.Tests` 測試專案（xUnit），覆蓋 framing round-trip、partial header、invalid length、multi-packet buffer。
 
 ## Decision Log
 ### 2026-05-27
+- 新增 `docs/GO_NO_GO_CHECKLIST.md`（試點上線決策清單）。
+- 針對 unified HSMS codec/session 做可讀性重構與註解補強（不變更外部契約）。
+- 新增 HSMS T6/T7 timers 最小骨架與 timeout 契約測試。
+- 新增 HSMS control/data unified multiplexing skeleton 與精簡整合測試。
+- 新增 HSMS data message 最小通道與 control/data 共存整合測試。
+- 新增 HSMS state machine 接到 session 管線（`NetIOHsmsSession`）與精簡整合測試。
+- 新增 HSMS 最小 state machine（Select/Linktest lifecycle）與精簡測試。
+- 新增 HSMS control message 最小子集（Select/Linktest）骨架與最小整合測試。
+- 新增 HSMS/SECS-II item model 最小子集（ASCII/U4）與編解碼契約測試。
+- 新增 SECS/GEM-style 協定 adapter 最小骨架（`SecsGemStyleCodec`）與契約測試。
+- 新增 `NetIOKit.SmokeTest` 簡易對接測試專案（PING/ACK 一鍵驗證）。
+- 新增高階 API v1 版本化相容策略與契約測試（防止未來破壞性擴充）。
+- 新增高階 API v1（Client/Server Facade）與對應 integration tests。
+- 補強 SessionRunner 邊界一致性 integration tests（斷線、取消、重連競態）。
+- 新增最小 `NetIOKit.Demo` client/server round-trip，並補 `MinimalClientServerDemoTests` integration tests。
+- 新增 `docs/CORE_SCOPE_V1.md`，正式定義 Core 主線與 Optional Tools 邊界。
+- 進入 Step C.5：補強 InMemory metrics（snapshot/reset/messages-per-second）與對應測試。
+- 進入 Step C：新增 SessionRunner metrics 介面與 InMemory 指標實作，補 metrics 測試。
+- 進入 Step B：新增重連策略（Exponential Backoff + jitter）與 SessionRunner 重連控制。
+- 進入 Step A：新增 `TcpTransport`、`SessionRunner`、loopback/integration 測試。
 - 決策：先產出架構藍圖，再進入程式實作。
 - 原因：先確立邊界與契約，可降低後續重工，並有利多語言擴展。
 - 決策：以「長度前綴（Int32 Little-Endian）」作為 v0 範例 framing。

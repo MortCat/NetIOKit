@@ -1,25 +1,45 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35913.81 d17.13
+VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetIOKit", "NetIOKit\NetIOKit.csproj", "{110B76CD-8312-4B25-AADC-5F9FC291B9D9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetIOKit", "NetIOKit\NetIOKit.csproj", "{6DB44FCA-9998-4383-BB13-E52BAA38CE5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetIOKit.Tests", "NetIOKit.Tests\NetIOKit.Tests.csproj", "{8F447BDE-5302-4A05-94FC-5B7956F913C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetIOKit.Benchmarks", "NetIOKit.Benchmarks\NetIOKit.Benchmarks.csproj", "{A7A5D4B1-9A65-43B5-A9D9-6D459DF8A1F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetIOKit.Demo", "NetIOKit.Demo\NetIOKit.Demo.csproj", "{A2C80146-43A3-49CF-B79D-598A09DA0223}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetIOKit.SmokeTest", "NetIOKit.SmokeTest\NetIOKit.SmokeTest.csproj", "{EF25E585-8B95-4AA7-B6AF-099DDA45F7E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{110B76CD-8312-4B25-AADC-5F9FC291B9D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{110B76CD-8312-4B25-AADC-5F9FC291B9D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{110B76CD-8312-4B25-AADC-5F9FC291B9D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{110B76CD-8312-4B25-AADC-5F9FC291B9D9}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {4B908970-EE3A-47B6-AF90-22C564EED753}
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6DB44FCA-9998-4383-BB13-E52BAA38CE5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DB44FCA-9998-4383-BB13-E52BAA38CE5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DB44FCA-9998-4383-BB13-E52BAA38CE5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DB44FCA-9998-4383-BB13-E52BAA38CE5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F447BDE-5302-4A05-94FC-5B7956F913C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F447BDE-5302-4A05-94FC-5B7956F913C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F447BDE-5302-4A05-94FC-5B7956F913C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F447BDE-5302-4A05-94FC-5B7956F913C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7A5D4B1-9A65-43B5-A9D9-6D459DF8A1F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7A5D4B1-9A65-43B5-A9D9-6D459DF8A1F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7A5D4B1-9A65-43B5-A9D9-6D459DF8A1F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7A5D4B1-9A65-43B5-A9D9-6D459DF8A1F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2C80146-43A3-49CF-B79D-598A09DA0223}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2C80146-43A3-49CF-B79D-598A09DA0223}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2C80146-43A3-49CF-B79D-598A09DA0223}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2C80146-43A3-49CF-B79D-598A09DA0223}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF25E585-8B95-4AA7-B6AF-099DDA45F7E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF25E585-8B95-4AA7-B6AF-099DDA45F7E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF25E585-8B95-4AA7-B6AF-099DDA45F7E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF25E585-8B95-4AA7-B6AF-099DDA45F7E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
