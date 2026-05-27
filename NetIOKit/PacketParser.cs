@@ -1,11 +1,24 @@
-﻿namespace NetIOKit
+using System.Buffers;
+using NetIOKit.Protocols;
+
+namespace NetIOKit;
+
+/// <summary>
+/// Backward-compatible parser entry point.
+/// Internally delegates to <see cref="LengthPrefixedPacketParser"/>.
+/// </summary>
+public sealed class PacketParser
 {
-    public class PacketParser
+    private readonly LengthPrefixedPacketParser _inner;
+
+    public PacketParser(int maxPayloadLength = 1024 * 1024)
     {
-        // 1. Treats data as a single packet when a specific header is detected.
-        // 2. Treats data as a single packet when a specific terminator is detected.
-        // 3. Treats data as a single packet when the received length is less than a predefined minimum.
-
-
+        _inner = new LengthPrefixedPacketParser(maxPayloadLength);
     }
+
+    public bool TryDecode(ReadOnlySequence<byte> source, out byte[] message, out int consumedBytes)
+        => _inner.TryDecode(source, out message, out consumedBytes);
+
+    public byte[] Encode(byte[] message)
+        => _inner.Encode(message);
 }
